@@ -1,17 +1,16 @@
 from flask import Flask, request, jsonify
 import pandas as pd
 import pickle
+import joblib
 
 app = Flask(__name__)
 
-def load_model():
-    with open('saved_steps.pkl', 'rb') as file:
-        data = pickle.load(file)
-    return data
+model_data = joblib.load('saved_steps.joblib')
 
-model_data = load_model()
+# Accès aux éléments de l'objet chargé
 model = model_data["model"]
-X = model_data["training_data"]
+X= model_data["training_data"]
+
 
 @app.route('/predict', methods=['POST'])
 def predict():
