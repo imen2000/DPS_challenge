@@ -6,6 +6,5 @@ pip install flask
 pip install pandas
 pip install matplotlib 
 pip install scikit-learn
-pip install --upgrade scikit-learn
 
 
