@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 model_data = joblib.load('saved_steps.joblib')
 
-# Accès aux éléments de l'objet chargé
+
 model = model_data["model"]
 X= model_data["training_data"]
 
